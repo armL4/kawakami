@@ -1,0 +1,26 @@
+$light:#fff;
+$gray:#c4ccde;
+
+.sidebar{
+    width: 14rem;
+    height: calc(100vh − 52px);
+    border-radius: 1px solid $gray;
+    ul{
+      list-style: none;
+      padding: 1rem 2rem;
+      li{
+        .buscador{
+          background-color:transparent;
+          color: white;
+          font-family: 'Mukta', sans-serif;
+          font-family: 'Press Start 2P', cursive;
+          font-family: 'The Nautigal', cursive;
+          font-size: 22px;
+        }
+        a{
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }     

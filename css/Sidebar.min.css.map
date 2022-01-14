@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,QAAQ,AAAA,CACJ,KAAK,CAAE,KAAK,CACZ,MAAM,CAAE,mBAAmB,CAC3B,aAAa,CAAE,GAAG,CAAC,KAAK,CALtB,OAAO,CAgBV,AAdH,AAII,QAJI,CAIJ,EAAE,AAAA,CACA,UAAU,CAAE,IAAI,CAChB,OAAO,CAAE,SAAS,CAOnB,AAbL,AAOM,QAPE,CAIJ,EAAE,CAGA,EAAE,AAAA,CACA,aAAa,CAAE,IAAI,CAIpB,AAZP,AASQ,QATA,CAIJ,EAAE,CAGA,EAAE,CAEA,CAAC,AAAA,CACC,eAAe,CAAE,IAAI,CACtB",
+    "sources": [
+        "../src/components/Sidebar/Sidebar.scss"
+    ],
+    "names": [],
+    "file": "Sidebar.min.css"
+}
