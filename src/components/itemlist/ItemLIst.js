@@ -4,12 +4,13 @@ import Item from '../item/item.js'
 
 
 
-const ItemList = ({desayuno}) => {
+const ItemList = ({productos}) => {
     return (
         <div className="desayuno row">
-            { desayuno.map(desayuno => <Item key={desayuno.id} nombre ={desayuno.name}  img={desayuno.img} precio ={desayuno.price} year={desayuno.year} description={desayuno.description} /> )}
+            { productos.map(productos => <Item key={productos.id} nombre ={productos.name}  img={productos.img} precio ={productos.price} year={productos.year} description={productos.description} /> )}
         </div>
     )
 }
+
 
 export default ItemList

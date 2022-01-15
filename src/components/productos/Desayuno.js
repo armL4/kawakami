@@ -54,7 +54,7 @@ const desayuno =[
 
 
 
-    export const getFetch = new Promise ((resolve,reject)=>{
+    export const getFetchDesayuno = new Promise ((resolve,reject)=>{
          let condition = true;
          if(condition){
              setTimeout(()=>{

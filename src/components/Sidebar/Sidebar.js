@@ -13,13 +13,13 @@ const Sidebar = () => {
                 <Link to="/">ofertas</Link>
             </li>
             <li>
-                <Link to="/Desayuno">desayuno</Link>
+                <Link to="/categorias/desayuno">desayuno</Link>
             </li>
             <li>
-                <Link to="/Almuerzo">almuerzo</Link>
+                <Link to="/categorias/almuerzo">almuerzo</Link>
             </li>
             <li>
-                <Link to="/Cena">cena</Link>
+                <Link to="/categorias/cena">cena</Link>
             </li>
             <li></li>
             </ul>

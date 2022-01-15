@@ -1,14 +1,57 @@
 import {useState, useEffect} from 'react'
-import {getFetch} from '../productos/Desayuno'
+import {getFetchDesayuno} from '../productos/Desayuno'
+import {getFetchAlmuerzo} from '../productos/almuerzo'
 import Spiner from '../spinner/Spinner.js'
 import ItemList from '../itemlist/ItemLIst.js'
 import './ItemListContainer.scss';
-const ItemListContainer = () => {
-    const [desayuno, setProductos] = useState([])
+import { useParams } from 'react-router-dom'
+const ItemListContainer= () => {
+    const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    
+    const {tipoComida} = useParams()
+    
+    
+    useEffect(() => {
+        if(tipoComida==="Desayuno"){ 
+        getFetchDesayuno
+        .then(resp => setProductos(resp))
+        .catch(err => console.log(err))
+        .finally(()=> setLoading(false) )}
+        
+            if(tipoComida==="Almuerzo"){
+                getFetchAlmuerzo
+        .then(resp => setProductos(resp))
+        .catch(err => console.log(err))
+        .finally(()=> setLoading(false) )
+            }
+            /* else{} */
+        
+    },  [])
+    
+
+    return (
+        <>
+        
+        <div className="itemListContainer">
+        <div className="cards">
+        {
+        loading ?  <Spiner/> :<ItemList productos={productos}/>
+        }
+        </div>
+        </div>
+        </>
+    )
+}
+
+/*------------almuerzo----------------- */
+/* const ItemListContainerAlmuerzo = () => {
+    const [Almuerzo, setProductos] = useState([])
     const [loading, setLoading] = useState(true)
     
     useEffect(() => {
-        getFetch
+        getFetchAlmuerzo
         .then(resp => setProductos(resp))
         .catch(err => console.log(err))
         .finally(()=> setLoading(false) )
@@ -21,12 +64,13 @@ const ItemListContainer = () => {
         <div className="itemListContainer">
         <div className="cards">
         {
-        loading ?  <Spiner/> :<ItemList desayuno={desayuno}/>
+        loading ?  <Spiner/> :<ItemList Almuerzo={Almuerzo}/>
         }
         </div>
         </div>
         </>
     )
-}
+} */
 
 export default ItemListContainer
+

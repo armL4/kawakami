@@ -4,7 +4,8 @@ import ItemListContainer from "../itemlistcontainer/ItemListContainer";
 const Almuerzo = () => {
     return (
         <div>
-            almuerzo
+            <ItemCount min={0} max={10}/>
+            <ItemListContainer/>
         </div>
     )
 }
