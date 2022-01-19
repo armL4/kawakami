@@ -1,15 +1,15 @@
 import React , {useState} from 'react';
-import "./ItemCount.scss"
+import './ItemCount.scss'
 
 
-const ItemCount = ({min,max}) => {
+const ItemCount = ({min, max, onAdd}) => {
 
     
     
     const [counter, setCounter] =  useState(min);   
     const [stock , setStock]  = useState(9);
     
-    const onAdd = () => {
+    const Add = () => {
         (counter < max) && setCounter(counter +1) ;
         (stock >= 1) && setStock(stock - 1);
 
@@ -29,7 +29,20 @@ const ItemCount = ({min,max}) => {
     return (
         <div className="producto">
             
-            
+            <div className="stockCantidad">
+            <p>Cantidad: {counter}</p>
+            <p>Stock {stock}</p>
+            </div>
+
+            <div className="buttons">
+            <button onClick ={Add}>+</button>
+            <button  onClick ={resetear}>Reset</button>
+            <button onClick ={onRest}>-</button>
+            </div>
+                <hr></hr>
+            <div className="buy">
+            <button onClick={()=> onAdd(counter)}>Agregar al Carrito</button>
+            </div>
         </div>
     )
 }

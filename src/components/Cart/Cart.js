@@ -1,7 +1,7 @@
 import React from 'react'
-import ItemCount from '../Itemcount/Itemcount.js'
-import "./item.css"
-const Item = ({nombre, img, precio,year,description}) => {
+import "./kart.scss"
+import ItemCount from '../Itemcount/Itemcount'
+const Cart = ({nombre, img, precio,year,description}) => {
     return (
         <div className="itemContenedor ">
             <img src={img} alt={nombre}></img>
@@ -18,6 +18,4 @@ const Item = ({nombre, img, precio,year,description}) => {
         </div>
     )
 }
-
-export default Item
-
+export default Cart

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import imagen from '../../static/carrito.png'
 import "./Sidebar.scss";
 const Sidebar = () => {
     return (
@@ -21,7 +21,14 @@ const Sidebar = () => {
             <li>
                 <Link to="/categorias/cena">cena</Link>
             </li>
-            <li></li>
+            <li>
+                <Link to="kart">
+                    <div className='carro'>
+                            <img className='carrito' src={imagen} alt="imagen" style={{width:"30px"}}/>
+                            
+                    </div>
+                </Link>
+            </li>
             </ul>
         </div>
     )
