@@ -1,21 +1,52 @@
 import React from 'react'
-import "./kart.scss"
-import ItemCount from '../Itemcount/Itemcount'
-const Cart = ({nombre, img, precio,year,description}) => {
+import { useCartContext } from '../Cart/cartcontext'
+import './kart.scss'
+import CartEmpty from './Cartvacio/CartEmpty'
+import {Link} from 'react-router-dom'
+
+const Cart = () => {
+    const {cartList , vaciarCarrito , removeItemCarrito, total} = useCartContext()
+
+    console.log(cartList)
+    
     return (
-        <div className="itemContenedor ">
-            <img src={img} alt={nombre}></img>
-            <h3 className="name">{nombre}</h3>
-            <p className="description">{description}</p>
-            <p>Año {year}</p>
-            <hr></hr>
-            <h4>Precio: $ {precio}</h4>
-            
-            <ItemCount max={10} min={1} />
-            <div className="buy">
-            
-            </div>
+        <>
+        <div className="h1Cart">
+        <h1>Tus Compras</h1>
+
         </div>
+        
+        
+        {cartList.length > 0 ? 
+        
+        <div>
+
+        {cartList.map(prod =>  
+            (<div className="contenedorCarrito" key={prod.id}>
+             <li className="listadoCarrito" key={prod.id}>{prod.name} - cant: {prod.cantidad} 
+             <button onClick={() => removeItemCarrito(prod.id)}>X</button>
+             </li>
+            </div>)
+                
+                ) }
+        <div className="total">
+        <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+        
+        <button>Terminar Compra</button>
+        
+        <p>Total : ${total()}</p>
+
+        </div>
+        
+        </div>
+        : 
+        
+        <CartEmpty />
+        }
+        
+        </>
+    
     )
 }
+
 export default Cart

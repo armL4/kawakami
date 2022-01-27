@@ -5,7 +5,7 @@ import {useCartContext} from '../../Cart/cartcontext'
 import ItemCount from '../../Itemcount/Itemcount'
 import './ItemDetail.scss'
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({productos}) => {
   
    const [show, setshow] = useState(true)
    
@@ -15,11 +15,10 @@ const ItemDetail = ({producto}) => {
 
    const onAdd = (cant) => {
        console.log(cant)
-        agregarAlCarrito({...producto, cantidad:cant})
+        agregarAlCarrito({...productos, cantidad:cant})
 
         setshow(false)
-       //console.log(`Usted ha comprado ${counter} productos de ${producto.name}`)
-       //alert(`Usted ha comprado ${counter} productos de ${producto.name}`)
+       
        
    } 
 
@@ -29,22 +28,22 @@ const ItemDetail = ({producto}) => {
 
         <div className="Item-Detail-Grid">
             <div className="Img-Detail">
-            <img src={producto.img} alt={producto.name}></img>
+            <img src={productos.img} alt={productos.name}></img>
             </div>
 
             <div className="Info-Detail">
-                <h4>Precio : $ {producto.price}</h4>
+                <h4>Precio : $ {productos.price}</h4>
             </div>
 
             <div className="Description-Detail">
                 <div className="nombreYear">
-                <h3>{producto.name}</h3>
-                <h4>Año : {producto.year}</h4>
+                <h3>{productos.name}</h3>
+                <h4>Año : {productos.year}</h4>
 
                 </div>
 
 
-                <p>{producto.description}</p>
+                <p>{productos.description}</p>
             </div>
         
         <div className="Contador-Detail">
